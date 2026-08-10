@@ -3,9 +3,9 @@
 	"id": "snaplook",
 	"version": "${version}",
 	"name": "Snaplook",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod is to have a snaplook feature similar to that of Lunar Client or Feather/Dawn Client",
 	"authors": [
-		"Me!"
+		"RayTMM"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
