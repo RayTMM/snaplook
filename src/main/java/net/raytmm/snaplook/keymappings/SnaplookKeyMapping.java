@@ -11,7 +11,7 @@ public class SnaplookKeyMapping {
     public static final KeyMapping BACK_VIEW_KEYMAPPING = KeyMappingHelper.registerKeyMapping(
             new KeyMapping("key.snaplook.snap_key_backwards", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_Z, KeyMapping.Category.MISC));
     public static final KeyMapping FRONT_VIEW_KEYMAPPING = KeyMappingHelper.registerKeyMapping(
-            new KeyMapping("key.snaplook.nap_key_forwards", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_X, KeyMapping.Category.MISC));
+            new KeyMapping("key.snaplook.snap_key_forwards", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_X, KeyMapping.Category.MISC));
 
 
     public static void register()

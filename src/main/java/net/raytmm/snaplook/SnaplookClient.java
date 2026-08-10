@@ -1,6 +1,7 @@
 package net.raytmm.snaplook;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.raytmm.snaplook.keymappings.SnaplookKeyMapping;
@@ -10,6 +11,8 @@ public class SnaplookClient implements ClientModInitializer {
     public void onInitializeClient()
     {
         SnaplookKeyMapping.register();
+        ClientTickEvents.END_CLIENT_TICK.register(SnaplookClient::onEndTick);
+
     }
 
 
