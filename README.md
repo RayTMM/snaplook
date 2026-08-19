@@ -1,4 +1,5 @@
 # snaplook
+This is a 1.20.4 version of this mod
 
 ## Setup
 
