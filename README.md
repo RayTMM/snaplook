@@ -6,7 +6,7 @@ though those can be changed in Minecraft's control menu!
 
 ## Known Issues
 
-Even thought there is a 1.20.4 port available, it is currently not working and thus should not be downloaded. I am aware of the issue and will work to fix it!
+None at the moment. Please report any bugs using the issues page on Github
 
 ## Setup
 
