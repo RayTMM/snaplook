@@ -1,6 +1,7 @@
 {
   "key.snaplook.snap_key_backwards" : "Snaplook Backwards Perspective",
-  "key.snaplook.snap_key_forwards" : "Snaplook Forwards Perspective"
+  "key.snaplook.snap_key_forwards" : "Snaplook Forwards Perspective",
+  "key.category.snaplook.main" : "Snaplook"
 }
 
 
