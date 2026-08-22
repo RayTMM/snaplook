@@ -8,6 +8,10 @@ though those can be changed in Minecraft's control menu!
 
 None at the moment. Please report any bugs using the issues page on Github
 
+## Feedback
+If you have any feedback (bug reports, suggested features, etc), please let me know on GitHub via the issues page.
+
+
 ## License
 
 This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
