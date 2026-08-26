@@ -6,7 +6,7 @@ though those can be changed in Minecraft's control menu!
 
 ## Known Issues
 
-None at the moment. Please report any bugs using the issues page on Github
+Please see the Issues page
 
 ## Feedback
 If you have any feedback (bug reports, suggested features, etc), please let me know on GitHub via the issues page.
