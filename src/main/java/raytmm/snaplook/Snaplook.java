@@ -21,7 +21,7 @@ public class Snaplook implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Snaplook Mod Initialized");
 	}
 
 	public static Identifier id(String path) {

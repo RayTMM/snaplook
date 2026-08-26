@@ -6,6 +6,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.Perspective;
 import raytmm.snaplook.keymapping.SnaplookKeyMapping;
 
+
 public class SnaplookClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -13,24 +14,35 @@ public class SnaplookClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(SnaplookClient::onEndTick);
     }
 
+    static boolean isActive = false;
+    static Perspective savedPerspective = null;
     public static void onEndTick(MinecraftClient client)
     {
-        if (client.player == null)
-        {
-            return;
-        }
 
-        if (SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isPressed())
+        if (!isActive)
         {
-            client.options.setPerspective(Perspective.THIRD_PERSON_BACK);
+            if (SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isPressed())
+            {
+                savedPerspective = client.options.getPerspective();
+                isActive = true;
+                client.options.setPerspective(Perspective.THIRD_PERSON_BACK);
+            }
+            else if (SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isPressed())
+            {
+                savedPerspective = client.options.getPerspective();
+                isActive = true;
+                client.options.setPerspective(Perspective.THIRD_PERSON_FRONT);
+            }
         }
-        else if (SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isPressed())
+        else //snaplook is currently active
         {
-            client.options.setPerspective(Perspective.THIRD_PERSON_FRONT);
-        }
-        else
-        {
-            client.options.setPerspective(Perspective.FIRST_PERSON);
+            if (!SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isPressed() && !SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isPressed())
+            {
+                client.options.setPerspective(savedPerspective);
+                savedPerspective = null;
+                isActive = false;
+            }
+
         }
     }
 }

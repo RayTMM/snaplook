@@ -2,6 +2,7 @@ package raytmm.snaplook.keymapping;
 
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.option.Perspective;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 import raytmm.snaplook.Snaplook;
@@ -25,6 +26,8 @@ public class SnaplookKeyMapping
                     "category.snaplook"
                 )
         ));
+
+    //public static Perspective savedPerspective = null;
 
         public static void register() {
             Snaplook.LOGGER.info("Registering Mod Keybinds for " + Snaplook.MOD_ID);
