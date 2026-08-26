@@ -2,6 +2,7 @@ package net.raytmm.snaplook;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.Camera;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.raytmm.snaplook.keymappings.SnaplookKeyMapping;
@@ -15,10 +16,38 @@ public class SnaplookClient implements ClientModInitializer {
 
     }
 
-
+    static boolean isActive = false;
+    static CameraType savedPerspective = null;
     public static void onEndTick(Minecraft client)
     {
-        if (client.player == null)
+       if (!isActive) //snaplook is off
+       {
+           if (SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isDown())
+           {
+                savedPerspective = client.options.getCameraType();
+                isActive = true;
+                client.options.setCameraType(CameraType.THIRD_PERSON_BACK);
+           }
+           else if (SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isDown())
+           {
+               savedPerspective = client.options.getCameraType();
+               isActive = true;
+               client.options.setCameraType(CameraType.THIRD_PERSON_FRONT);
+           }
+       }
+       else //snaplook is currently active
+       {
+            if (!SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isDown() && !SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isDown())
+            {
+                client.options.setCameraType(savedPerspective);
+                savedPerspective = null;
+                isActive = false;
+            }
+       }
+
+
+
+        /*if (client.player == null)
         {
             return;
         }
@@ -34,6 +63,6 @@ public class SnaplookClient implements ClientModInitializer {
         else
         {
             client.options.setCameraType(CameraType.FIRST_PERSON);
-        }
+        }*/
     }
 }

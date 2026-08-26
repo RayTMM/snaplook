@@ -14,7 +14,7 @@ public class Snaplook implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Initializing Snaplook");
 	}
 
 	public static Identifier id(String path) {
