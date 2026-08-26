@@ -1,10 +1,5 @@
-# snaplook
+# Snaplook
 This is a 1.20.4 version of this mod
 
-## Setup
-
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## Extra Information
+For all extra information (where to report bugs, etc, please refer to the 26.2/Main branch. Thank you!!
