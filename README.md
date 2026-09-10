@@ -3,6 +3,7 @@ This is a simple mod to be able to change perspectives similar to
 Snaplook on clients like Lunar and Feather! 
 At the start, it is bound to Z (for the back perspective) and X (for the front perspective) 
 though those can be changed in Minecraft's control menu!
+Please note that I am a full time college student and therefore I may be slow with modding updates
 
 ## Known Issues
 
