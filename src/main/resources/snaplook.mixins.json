@@ -3,7 +3,8 @@
 	"package": "raytmm.snaplook.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"KeybindMixin"
+
 	],
 	"injectors": {
 		"defaultRequire": 1

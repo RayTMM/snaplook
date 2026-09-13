@@ -27,4 +27,6 @@ public class Snaplook implements ModInitializer {
 	public static Identifier id(String path) {
 		return new Identifier(MOD_ID, path);
 	}
+
+
 }
