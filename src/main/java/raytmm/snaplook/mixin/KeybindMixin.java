@@ -21,11 +21,20 @@ public class KeybindMixin
     {
         //InputUtil.Key k2 = InputUtil.fromKeyCode(key,scancode);
         Snaplook.LOGGER.info("Key Event: " + key + "Scancode: " + scancode);
+
+
+
         if (SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.matchesKey(key, scancode))
         {
+
             Snaplook.LOGGER.info("SNAPLOOK BACK KEY DETECTED");
             //checking to see if key that is being inputted
-            if (action == GLFW.GLFW_PRESS)
+            if (MinecraftClient.getInstance().currentScreen == null)
+            {
+                SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.setPressed(true);
+                Snaplook.LOGGER.info("BACK isPressed: " + SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isPressed());
+            }
+            /*if (action == GLFW.GLFW_PRESS)
             {
                 //checking if key was pressed
                 //action is a variable (duh)
@@ -33,30 +42,34 @@ public class KeybindMixin
                 Snaplook.LOGGER.info("BACK isPressed: " + SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isPressed());
             }
 
-            if (action == GLFW.GLFW_RELEASE)
+            */if (action == GLFW.GLFW_RELEASE)
             {
                 //Checking if key was released
                 SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.setPressed(false);            }
 
-            ci.cancel();
+
         }
 
         if (SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.matchesKey(key, scancode))
         {
-            //checking to see if key that is being inputted
-            if (action == GLFW.GLFW_PRESS)
+            if (MinecraftClient.getInstance().currentScreen==null)
+            {
+                SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.setPressed(true);
+                Snaplook.LOGGER.info("FRONT isPressed: " + SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isPressed());
+            }
+            /*if (action == GLFW.GLFW_PRESS)
             {
                 //checking if key was pressed
                 //action is a variable (duh)
                 SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.setPressed(true);
             }
 
-            if (action == GLFW.GLFW_RELEASE)
+            */if (action == GLFW.GLFW_RELEASE)
             {
                 //Checking if key was released
                 SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.setPressed(false);            }
 
-            ci.cancel();
+
         }
     }
 

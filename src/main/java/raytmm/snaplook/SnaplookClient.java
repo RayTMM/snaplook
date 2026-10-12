@@ -26,12 +26,14 @@ public class SnaplookClient implements ClientModInitializer {
                 savedPerspective = client.options.getPerspective();
                 isActive = true;
                 client.options.setPerspective(Perspective.THIRD_PERSON_BACK);
+                Snaplook.LOGGER.info("BACK isPressed: " + SnaplookKeyMapping.BACK_VIEW_KEYMAPPING.isPressed());
             }
             else if (SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isPressed())
             {
                 savedPerspective = client.options.getPerspective();
                 isActive = true;
                 client.options.setPerspective(Perspective.THIRD_PERSON_FRONT);
+                Snaplook.LOGGER.info("FRONT isPressed: " + SnaplookKeyMapping.FRONT_VIEW_KEYMAPPING.isPressed());
             }
         }
         else //snaplook is currently active
